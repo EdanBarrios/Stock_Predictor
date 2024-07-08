@@ -27,7 +27,9 @@ A precision score module is imported to measure accuracy of model. Predictions a
 
 In order to plot the data we concatenate the test target and predicted values to visualize the difference between the model's predictions and actual stock behavior.
 
+A prediction function is created that fits the model using training vectors and target. It then models predictions using our predictors before combining everything together. 
 
+A backtest option is created using the stock data, model data, predictors, start, and step size. The start parameter tells the function how many days worth of data to use initially. The step size allows you to get a prediction for every step of the series that increases by the amount set by user. 
 
 
 
