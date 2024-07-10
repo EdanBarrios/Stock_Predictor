@@ -31,7 +31,4 @@ A prediction function is created that fits the model using training vectors and 
 
 A backtest option is created using the stock data, model data, predictors, start, and step size. The start parameter tells the function how many days worth of data to use initially. The step size allows you to get a prediction for every step of the series that increases by the amount set by user. 
 
-
-
-
-
+Each succeeding year uses the data set of all previous years as time goes on which makes it more accurate as the amount of data grows with each year.
