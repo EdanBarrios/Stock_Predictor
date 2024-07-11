@@ -32,3 +32,19 @@ A prediction function is created that fits the model using training vectors and 
 A backtest option is created using the stock data, model data, predictors, start, and step size. The start parameter tells the function how many days worth of data to use initially. The step size allows you to get a prediction for every step of the series that increases by the amount set by user. 
 
 Each succeeding year uses the data set of all previous years as time goes on which makes it more accurate as the amount of data grows with each year.
+ 
+A list is created that holds dataframes with all the predictions for a single year. A loop function that goes across the data helps make predictions. It creates a training (all data from past years) and test set (current year). These are then used to make predictions combined with the model with the result returned as concatenated dataframe.
+
+The "value_counts" function shows how many times each type of prediction (up or down) was made. This is used to compare to our actual predictions which is then used to return a prediction score. 
+
+** ADDING ADDITIONAL PREDICTORS TO MODEL **
+
+A list of horizons is created that can be looked at reference to notice general trends such as one day, week, month, or year. The ratio is then taken to help make the model make predictions. These are looped through and a rolling average is calculated and its mean is taken. 
+
+A closed ratio column is created and added to the S&P500 dataframe. This is the closing price divided by rolling average. The trend is number of days that the stock price goes up. 
+
+The trend column is found by shifting forward and taking the rolling sum of target. It will look at any given day, look at the past few days, and see the sum of the target. These ratio and trend columns are added to new predictors. 
+
+** IMPROVING MODEL **
+
+Number of estimators is increased and minimum sample split is decreased. The prediction function is rewritten slightly.
